@@ -1,4 +1,4 @@
-pragma solidity >=0.4.22 <0.7.0;
+pragma solidity ^0.4.26;
 
 /*  RULES:
     1.	Only members added by administrator can vote.

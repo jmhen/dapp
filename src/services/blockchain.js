@@ -50,19 +50,6 @@ export async function createElection(values){
       });
       console.log(added);
     }
-    // values.members.forEach(({ name, account }) => {
-    //   console.log(`adding ${name}`);
-    //   const added = await newContractInstance.methods.addMember(web3.utils.asciiToHex(name),account).send({from:defaultAccount},function(error){
-    //     if(!error) {
-    //       return true;
-    //     } 
-    //     else {
-    //       console.log(error);
-    //       return false
-    //     }
-    //   });
-    //   console.log(added);
-    // });
     history.push("/enter/admin");
     alert(`The New Election is Successfully Created. \nYou can now access Election Details through the address: \n${newContractInstance.options.address}`);
     
@@ -94,14 +81,6 @@ export async function fetchElectionData({address}) {
     const deadline = await myContract.methods.deadline().call();
     const totalVoted = await myContract.methods.totalVoted().call();
     console.log(deadline);
-    // const vote = await myContract.methods.getVote().call({from:account},function(error,result){
-    //   if(error) {
-    //     console.log(error);
-    //     return null;
-    //   }
-    //   else return result
-    // });
-    // console.log(vote);
     
     const data = {
         contract:myContract,
